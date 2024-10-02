@@ -10,9 +10,14 @@ import java.util.Iterator;
 public class task3 {
 
     public static void main(String[] args) throws IOException {
-        String valuesFile = "C:\\Users\\miloe\\Downloads\\Performans\\src\\main\\java\\Task3\\values.json";
-        String testsFile = "C:\\Users\\miloe\\Downloads\\Performans\\src\\main\\java\\Task3\\tests.json";
-        String reportFile = "C:\\Users\\miloe\\Downloads\\Performans\\src\\main\\java\\Task3\\reportFile.json";
+        if (args.length != 3) {
+            System.err.println("Необходимо передать три аргумента: путь к файлу values.json, путь к файлу tests.json и путь к файлу report.json.");
+            return;
+        }
+
+        String valuesFile = args[0];
+        String testsFile = args[1];
+        String reportFile = args[2];
 
         try {
             fillReport(valuesFile, testsFile, reportFile);
